@@ -1,0 +1,263 @@
+.layout {
+    padding: 20px 0;
+    @media (max-width: $lg) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    &__container {
+    }
+    &__header {
+    }
+    &__title {
+        margin: -20px 0 20px;
+        @media (max-width: $lg) {
+            margin-top: 0;
+        }
+        @media (max-width: $sm) {
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+    }
+    &__breadcrumbs {
+        margin: 0 0 40px;
+        @media (max-width: $lg) {
+            margin: -5px -15px 15px;
+            padding: 5px 15px;
+            overflow-x: auto;
+        }
+        @media (max-width: $sm) {
+            font-size: 12px;
+        }
+    }
+    &__catalog {
+        &-col--header {
+        }
+        &-col--aside {
+            @media (min-width: $lg-mf) {
+                align-self: flex-start;
+            }
+            @media (max-width: $lg) {
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+        }
+        &-col--main {
+            @media (max-width: $lg) {
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+        }
+        &-header {
+            margin: 0 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media (max-width: $lg) {
+                margin-bottom: 30px;
+                flex-wrap: wrap;
+            }
+            &-title {
+                margin: 0 30px 0 0;
+                line-height: 1;
+                @media (max-width: $lg) {
+                    max-width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 30px;
+                    flex-basis: 100%;
+                    font-size: 32px;
+                }
+            }
+            &-filter-btn {
+                margin-right: auto;
+            }
+            &-sort {
+                margin-left: auto;
+                position: relative;
+                &-btn {
+                }
+                &-select {
+                }
+            }
+        }
+        &-aside {
+            @media (max-width: $lg) {
+            }
+            &-filter {
+            }
+            &-subtitle {
+                margin: 0 0 10px;
+            }
+        }
+        &-main {
+            &-goods-list {
+                margin-bottom: 90px;
+            }
+            &-pagination {
+                margin: 0 0 20px;
+            }
+        }
+    }
+    &__gift-list {
+        margin: 0 0 60px;
+        @media (max-width: $sm) {
+            margin-bottom: 45px;
+        }
+    }
+    &__footer-text {
+        margin: 0 0 15px;
+        line-height: 1.5;
+        @media (max-width: $sm) {
+            font-size: 16px;
+        }
+    }
+    &__promotions-section {
+        
+    }
+    &__info-screen {
+        margin: 0 0 35px;
+    }
+    &__faq-list {
+        margin: 0 0 100px;
+        @media (max-width: $sm) {
+            margin-bottom: 20px;
+        }
+    }
+    &__contacts {
+        padding-bottom: 60px;
+        @media (max-width: $sm) {
+            padding-bottom: 290px;
+        }
+        &-inner {
+            padding: 1px 0;
+            position: relative;
+            z-index: 0;
+        }
+        &-map {
+            background: $color-black-1;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        &-form {
+            background: $color-white-1;
+            width: 334px;
+            margin: -81px 60px 60px auto;
+            padding: 35px;
+            border-radius: 10px;
+            @media (max-width: $sm) {
+                width: auto;
+                margin: 290px 15px -270px;
+                padding: 25px;
+            }
+        }
+    }
+    &__account {
+        padding-bottom: 50px;
+        &-row {
+        }
+        &-row--col {
+            &-aside {
+                @media (max-width: $md) {
+                    max-width: 35%;
+                    flex-basis: 35%;
+                }
+                @media (max-width: $sm) {
+                    max-width: 100%;
+                    flex-basis: 100%;
+                }
+            }
+            &-main {
+                @media (max-width: $md) {
+                    max-width: 65%;
+                    flex-basis: 65%;
+                }
+                @media (max-width: $sm) {
+                    max-width: 100%;
+                    flex-basis: 100%;
+                }
+            }
+        }
+        &-settings {
+            max-width: 400px;
+            @media (max-width: $sm) {
+                max-width: 100%;
+            }
+        }
+        &-history {
+            width: 100%;
+        }
+        &-favorites {
+            width: 100%;
+        }
+    }
+    &__order {
+        padding-bottom: 100px;
+        &-row {
+            justify-content: space-between;
+            &--col-aside {
+                max-width: 33.333333333%;
+                flex-basis: 33.333333333%;
+                @media (max-width: $lg) {
+                    max-width: 400px;
+                    flex-basis: 400px;
+                }
+                @media (max-width: $md) {
+                    max-width: 374px;
+                    flex-basis: 374px;
+                }
+                @media (max-width: $sm) {
+                    max-width: 100%;
+                    flex-basis: 100%;
+                }
+            }
+            &--col-main {
+                max-width: 33.333333333%;
+                flex-basis: 33.333333333%;
+                @media (max-width: $lg) {
+                    max-width: 400px;
+                    flex-basis: 400px;
+                }
+                @media (max-width: $md) {
+                    max-width: 374px;
+                    flex-basis: 374px;
+                }
+                @media (max-width: $sm) {
+                    max-width: 100%;
+                    margin-top: 15px;
+                    flex-basis: 100%;
+                }
+            }
+        }
+    }
+    &__card-page {
+        &-row {
+            &-col {
+                &--slider {
+                    @media (max-width: $lg) {
+                        max-width: 100%;
+                        flex-basis: 100%;
+                    }
+                }
+                &--content {
+                    @media (max-width: $lg) {
+                        max-width: 100%;
+                        flex-basis: 100%;
+                    }
+                }
+                &--cheaper {
+                }
+            }
+        }
+        &-cheaper {
+            &-title {
+                margin: 0 0 15px;
+            }
+            &-block {
+            }
+        }
+    }
+}
