@@ -85,7 +85,7 @@
                         </div>
                         <button
                             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                            {{ __('base.login') }}
+                            {{ __('base.registration') }}
                         </button>
                         <p class="text-xl font-light text-gray-500 dark:text-gray-400">
                             Уже есть аккаунт? <a href="{{ route('login') }}"

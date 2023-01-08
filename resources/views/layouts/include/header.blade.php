@@ -23,8 +23,7 @@
             <div class="header__top-toggle-wrap">
                 <button class="js-header-nav-toggle header__top-toggle"
                     type="button"><span></span><span></span><span></span></button>
-            </div><a class="header__top-logo" href="/"><img src="images/logo-black.png"
-                    alt="Luxury Life" /></a>
+            </div><a class="header__top-logo" href="/"><img src="images/logo-black.png" alt="Luxury Life" /></a>
             <div class="header__top-action">
                 <form class="d-md-none search-form header__nav-action-search" action="#">
                     <input class="search-form__input" type="search" name="q" required="required"
@@ -35,8 +34,7 @@
                         </svg>
                     </button>
                 </form>
-                <button
-                    class="d-md-none js-header-search-toggle action-btn action-btn--size-md header__top-action-item"
+                <button class="d-md-none js-header-search-toggle action-btn action-btn--size-md header__top-action-item"
                     type="button">
                     <svg class="icon action-btn__icon">
                         <use xlink:href="images/sprite.svg#search"></use>
@@ -45,20 +43,12 @@
                         <use xlink:href="images/sprite.svg#close"></use>
                     </svg>
                 </button>
-                <button class="d-md-none action-btn action-btn--size-md header__top-action-item"
-                    type="button">
+                <button class="d-md-none action-btn action-btn--size-md header__top-action-item" type="button">
                     <svg class="icon action-btn__icon">
                         <use xlink:href="images/sprite.svg#phone-type-1"></use>
                     </svg>
                 </button>
-                <a href="{{ route('login') }}" class="d-md-none action-btn action-btn--size-md header__top-action-item"
-                    type="button">
-                    <svg class="icon action-btn__icon">
-                        <use xlink:href="images/sprite.svg#user"></use>
-                    </svg>
-                  </a>
-                <button class="d-md-none action-btn action-btn--size-md header__top-action-item"
-                    type="button">
+                <button class="d-md-none action-btn action-btn--size-md header__top-action-item" type="button">
                     <svg class="icon action-btn__icon">
                         <use xlink:href="images/sprite.svg#favorites"></use>
                     </svg>
@@ -68,6 +58,21 @@
                         <use xlink:href="images/sprite.svg#basket"></use>
                     </svg><span class="action-btn__badge">2</span>
                 </button>
+
+                @auth
+                    <a href="#lk"
+                        class="d-md-none action-btn action-btn--size-md rounded-full overflow-hidden header__top-action-item"
+                        type="button">
+                        <img src="{{ auth()->user()->avatar }}" alt="Личный кабинет">
+                    </a>
+                    @elseguest
+                    <a href="{{ route('login') }}" class="d-md-none action-btn action-btn--size-md header__top-action-item"
+                        type="button">
+                        <svg class="icon action-btn__icon">
+                            <use xlink:href="images/sprite.svg#user"></use>
+                        </svg>
+                    </a>
+                @endauth
             </div>
         </div>
     </div>
@@ -105,8 +110,7 @@
                                                     src="images/goods-rubric-3.svg" alt="Necklace" />
                                             </picture>
                                             <h3 class="title-size-5 goods-rubric-card__title"><a
-                                                    class="goods-rubric-card__link"
-                                                    href="#">Ожерелья</a></h3>
+                                                    class="goods-rubric-card__link" href="#">Ожерелья</a></h3>
                                         </article>
                                     </div>
                                     <div class="goods-rubric__col">
@@ -137,8 +141,7 @@
                                                     src="images/goods-rubric-5.svg" alt="Set" />
                                             </picture>
                                             <h3 class="title-size-5 goods-rubric-card__title"><a
-                                                    class="goods-rubric-card__link"
-                                                    href="#">Коллекции</a>
+                                                    class="goods-rubric-card__link" href="#">Коллекции</a>
                                             </h3>
                                         </article>
                                     </div>
@@ -171,14 +174,21 @@
                 </button>
                 <button class="action-btn action-btn--size-md header__nav-action-item" type="button">
                     <svg class="icon action-btn__icon">
-                        <use xlink:href="images/sprite.svg#user"></use>
-                    </svg>
-                </button>
-                <button class="action-btn action-btn--size-md header__nav-action-item" type="button">
-                    <svg class="icon action-btn__icon">
                         <use xlink:href="images/sprite.svg#favorites"></use>
                     </svg>
                 </button>
+                @auth
+                    <a href="#lk"
+                        class="action-btn action-btn--size-md header__nav-action-item rounded-full overflow-hidden">
+                        <img src="{{ auth()->user()->avatar }}" alt="Личный кабинет">
+                    </a>
+                @elseguest
+                    <a href="{{ route('login') }}" class="action-btn action-btn--size-md header__nav-action-item">
+                        <svg class="icon action-btn__icon">
+                            <use xlink:href="images/sprite.svg#user"></use>
+                        </svg>
+                    </a>
+                @endauth
             </div>
         </div>
     </div>

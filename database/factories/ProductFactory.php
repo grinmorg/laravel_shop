@@ -18,10 +18,12 @@ class ProductFactory extends Factory
             // Берём рандомный бренд для присваивания - только id
             'brand_id' => Brand::query()->inRandomOrder()->value('id'),
 
-            // пример с изображением нашёл сам
-            'thumbnail' => $this->faker->imageUrl(400, 300, 'placeholder', true, '400x300', true),
+            'thumbnail' => $this->faker->randomElement(['/images/good-card-1.jpg', '/images/good-card-2.jpg', '/images/good-card-3.jpg', '/images/good-card-4.jpg']),
 
             'price' => $this->faker->numberBetween(1000, 100000),
+
+            'on_home_page' => $this->faker->boolean(),
+            'sorting' => $this->faker->numberBetween(1, 999)
         ];
     }
 }

@@ -15,7 +15,10 @@ class BrandFactory extends Factory
             'title' => $this->faker->company(),
 
             // пример с изображением нашёл сам
-            'thumbnail' => $this->faker->imageUrl(400, 300, 'placeholder', true, '400x300', true)
+            'thumbnail' => $this->faker->imageUrl(400, 300, 'placeholder', true, '400x300', true),
+
+            'on_home_page' => $this->faker->boolean(),
+            'sorting' => $this->faker->numberBetween(1, 999)
         ];
     }
 }

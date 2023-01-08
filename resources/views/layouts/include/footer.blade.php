@@ -114,9 +114,9 @@
     </div>
     <div class="footer__bottom">
         <div class="container footer__bottom-container">
-            <p class="footer__bottom-copyright">Copyright © 2022</p>
-            <p class="footer__bottom-developer">Develop:&nbsp;<a href="#"
-                    target="_blank">designwork</a></p>
+            <p class="footer__bottom-copyright">Copyright © {{ now()->year }}</p>
+            <p class="footer__bottom-developer">Develop:&nbsp;<a href="https://github.com/grinmorg"
+                    target="_blank">GrinMorg</a></p>
         </div>
     </div>
 </footer>
