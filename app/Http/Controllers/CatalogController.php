@@ -20,7 +20,7 @@ class CatalogController extends Controller
 
         // убрал search() чтобы отключить Scout поиск
         $products = Product::query()
-            ->select(['id', 'title', 'text', 'price', 'thumbnail'])
+            ->select(['id', 'slug', 'title', 'text', 'price', 'thumbnail'])
             ->when(request('s'), function (Builder $q) {
                 $q->whereFullText(['title', 'text'], request('s'));
             })

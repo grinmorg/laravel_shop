@@ -231,7 +231,7 @@
                                                 </picture>
                                                 <div class="good-card__content">
                                                     <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                                            href="#">{{ $product->title }}</a></h3>
+                                                            href="{{ route('product', $product->slug) }}">{{ $product->title }}</a></h3>
                                                     <div class="good-card__price">
                                                         <div class="good-card__price-new">{{ $product->price }} руб</div>
                                                         {{-- <div class="good-card__price-old">8764 грн</div> --}}
