@@ -148,8 +148,10 @@
                                                 <use xlink:href="images/sprite.svg#like-fill"></use>
                                             </svg>
                                         </button>
-                                        <picture class="good-card__picture"><img src="{{ $product->makeThumbnail('350x350') }}"
-                                                alt="Silver earrings with cubic zirconia" /></picture>
+                                        <picture class="good-card__picture">
+                                            <img src="{{ $product->makeThumbnail('350x350') }}"
+                                                alt="Silver earrings with cubic zirconia" />
+                                            </picture>
                                         <div class="good-card__content">
                                             <h3 class="title-size-5 good-card__title"><a class="good-card__link"
                                                     href="#">{{ $product->title }}</a></h3>
@@ -528,9 +530,9 @@
                         <div class="info-screen__col">
                             <article class="info-card info-screen__card">
                                 <picture class="info-card__picture"><img src="images/info-card-1.svg"
-                                        alt="Бесплатная доставка" /></picture>
+                                        alt="Доставка в течении 3-х дней" /></picture>
                                 <div class="info-card__content">
-                                    <h3 class="title-size-5 info-card__title">Бесплатная доставка</h3>
+                                    <h3 class="title-size-5 info-card__title">Доставка в течении 3-х дней</h3>
                                 </div>
                             </article>
                         </div>

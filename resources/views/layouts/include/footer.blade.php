@@ -4,20 +4,20 @@
             <div class="js-sc-contacts sc-contacts footer__top-sc-btn">
                 <button class="sc-btn sc-btn--theme-accent sc-btn--size-md sc-contacts__el" type="button">
                     <svg class="icon sc-btn__icon">
-                        <use xlink:href="images/sprite.svg#phone-type-2"></use>
+                        <use xlink:href="/images/sprite.svg#phone-type-2"></use>
                     </svg>
                 </button>
                 <div class="sc-contacts__dropdown">
                     <button class="sc-btn sc-btn--theme-accent sc-btn--size-md sc-contacts__dropdown-item"
                         type="button">
                         <svg class="icon sc-btn__icon">
-                            <use xlink:href="images/sprite.svg#phone-type-2"></use>
+                            <use xlink:href="/images/sprite.svg#phone-type-2"></use>
                         </svg>
                     </button>
                     <button class="sc-btn sc-btn--theme-accent sc-btn--size-md sc-contacts__dropdown-item"
                         type="button">
                         <svg class="icon sc-btn__icon">
-                            <use xlink:href="images/sprite.svg#phone-type-2"></use>
+                            <use xlink:href="/images/sprite.svg#phone-type-2"></use>
                         </svg>
                     </button>
                 </div>
@@ -25,8 +25,8 @@
             <div class="row footer__top-row">
                 <div class="row__col--3 footer__top-col--logo">
                     <div class="footer__logo-wrap"><a class="footer__logo" href="/"><img
-                                src="images/logo-white.png" alt="Luxury Life" /></a>
-                        <div class="footer__payments"><img src="images/payments-method.svg"
+                                src="/images/logo-white.png" alt="Luxury Life" /></a>
+                        <div class="footer__payments"><img src="/images/payments-method.svg"
                                 alt="payments method" /></div>
                     </div>
                 </div>
@@ -64,23 +64,23 @@
                         <ul class="sc-block__list">
                             <li class="sc-block__item"><a class="sc-block__link" href="#">
                                     <svg class="icon sc-block__icon">
-                                        <use xlink:href="images/sprite.svg#sc-facebook"></use>
+                                        <use xlink:href="/images/sprite.svg#sc-facebook"></use>
                                     </svg></a></li>
                             <li class="sc-block__item"><a class="sc-block__link" href="#">
                                     <svg class="icon sc-block__icon">
-                                        <use xlink:href="images/sprite.svg#sc-instagram"></use>
+                                        <use xlink:href="/images/sprite.svg#sc-instagram"></use>
                                     </svg></a></li>
                             <li class="sc-block__item"><a class="sc-block__link" href="#">
                                     <svg class="icon sc-block__icon">
-                                        <use xlink:href="images/sprite.svg#sc-viber"></use>
+                                        <use xlink:href="/images/sprite.svg#sc-viber"></use>
                                     </svg></a></li>
                             <li class="sc-block__item"><a class="sc-block__link" href="#">
                                     <svg class="icon sc-block__icon">
-                                        <use xlink:href="images/sprite.svg#sc-telegram"></use>
+                                        <use xlink:href="/images/sprite.svg#sc-telegram"></use>
                                     </svg></a></li>
                             <li class="sc-block__item"><a class="sc-block__link" href="#">
                                     <svg class="icon sc-block__icon">
-                                        <use xlink:href="images/sprite.svg#sc-whatsapp"></use>
+                                        <use xlink:href="/images/sprite.svg#sc-whatsapp"></use>
                                     </svg></a></li>
                         </ul>
                     </div>
@@ -103,7 +103,7 @@
                             <button class="subscribe-btn subscribe-btn--size-md footer__subscribe-btn"
                                 type="submit">
                                 <svg class="icon subscribe-btn__icon">
-                                    <use xlink:href="images/sprite.svg#send"></use>
+                                    <use xlink:href="/images/sprite.svg#send"></use>
                                 </svg>
                             </button>
                         </form>

@@ -1,8 +1,12 @@
 import $ from 'jquery';
 window.$ = $;
-import 'nouislider';
+import './libs/nouislider.min.js';
 import 'select2';
 import 'slick-carousel';
+
+import Alpine from 'alpinejs'
+window.Alpine = Alpine
+Alpine.start()
 
 $(document).ready(function() {
     preloaderRemove();
@@ -110,15 +114,17 @@ $(document).ready(function() {
     // range slider init
     function rangeSliderInit() {
         if ($('.js-range-init').length > 0) {
-            var $slider = $('.js-range-init').get(0);
-            var $min = $('.js-input-amount-min');
-            var $max = $('.js-input-amount-max');
-            var minVal = 0;
-            var maxVal = 3000;
-            var gap = 5;
+            const $slider = $('.js-range-init').get(0);
+            const $min = $('.js-input-amount-min');
+            const $max = $('.js-input-amount-max');
+            const minVal = 0;
+            const maxVal = $('.js-range-init').data('price-max');
+            const gap = 10;
+            const startFrom = parseInt( $min.val() );
+            const startTo = parseInt( $max.val() );
 
             noUiSlider.create($slider, {
-                start: [minVal - gap, maxVal + gap],
+                start: [startFrom, startTo],
                 connect: true,
                 step: gap,
                 range: {
@@ -156,6 +162,7 @@ $(document).ready(function() {
             $max.get(0).addEventListener('change', function(){
                 $slider.noUiSlider.set([null, this.value]);
             });
+
         }
     }
 

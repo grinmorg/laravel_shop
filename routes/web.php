@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ThumbnailController;
 use Illuminate\Support\Facades\Route;
@@ -38,8 +39,13 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware('web')->group(function() {
+    // Главная
     Route::get('/', HomeController::class)->name('home');
 
+    // Каталог
+    Route::get('/catalog/{category:slug?}', CatalogController::class)->name('catalog');
+
+    // Для генерации миниатрю "на лету"
     Route::get('/storage/images/{dir}/{method}/{size}/{file}', ThumbnailController::class)
         ->where('method', 'resize|crop|fit')
         ->where('size', '\d+x\d+')
