@@ -25,7 +25,7 @@
             <div class="row footer__top-row">
                 <div class="row__col--3 footer__top-col--logo">
                     <div class="footer__logo-wrap"><a class="footer__logo" href="/"><img
-                                src="/images/logo-white.png" alt="Luxury Life" /></a>
+                                src="/images/logo-j.png" alt="Luxury Life" /></a>
                         <div class="footer__payments"><img src="/images/payments-method.svg"
                                 alt="payments method" /></div>
                     </div>

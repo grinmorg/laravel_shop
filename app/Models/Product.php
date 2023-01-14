@@ -102,4 +102,10 @@ class Product extends Model
         return $this->belongsToMany(Property::class)
             ->withPivot('value');
     }
+
+    // Товар может содержать множество Опций
+    public function optionValues(): BelongsToMany
+    {
+        return $this->belongsToMany(OptionValue::class);
+    }
 }

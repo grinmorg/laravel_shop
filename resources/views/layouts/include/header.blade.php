@@ -23,7 +23,7 @@
             <div class="header__top-toggle-wrap">
                 <button class="js-header-nav-toggle header__top-toggle"
                     type="button"><span></span><span></span><span></span></button>
-            </div><a class="header__top-logo" href="/"><img src="/images/logo-black.png" alt="Luxury Life" /></a>
+            </div><a class="header__top-logo" href="/"><img src="/images/logo-j.png" alt="Luxury Life" /></a>
             <div class="header__top-action">
                 <form class="d-md-none search-form header__nav-action-search" action="{{ route('catalog') }}">
                     <input class="search-form__input" type="search" name="s" value="{{ request('s') }}"

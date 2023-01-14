@@ -1,8 +1,6 @@
 .main-slider {
     position: relative;
-    @media (max-width: $sm) {
-        color: $color-white-1;
-    }
+    color: $color-white-1;
     &__slide {
         outline: none;
         vertical-align: top;
@@ -127,9 +125,7 @@
         }
     }
     &__btn {
-        @media (max-width: $sm) {
-            color: $color-white-1;
-        }
+        color: $color-white-1;
     }
     &__dots {
         margin-left: -5px;
@@ -137,9 +133,15 @@
         bottom: 22px;
         left: 50%;
         transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
         @extend .container;
         @media (max-width: $sm) {
             bottom: 60px;
+        }
+
+        .slick-dots li {
+            background: $color-white-1;
         }
     }
 }

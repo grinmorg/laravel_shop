@@ -5,7 +5,7 @@
 @section('content')
     <main class="main" role="main">
         <div class="page-poster">
-            <picture class="img-cover page-poster__media"><img src="/images/page-poster-1.jpg" alt="Earrings" /></picture>
+            <picture class="img-cover page-poster__media"><img src="/images/page-poster-1.png" alt="Earrings" /></picture>
         </div>
         <div class="layout">
             <div class="container layout__container">

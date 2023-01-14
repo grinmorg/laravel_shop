@@ -40,7 +40,9 @@
                                         <div class="js-card-slider-mini-init card-slider-mini__el">
                                             <div class="card-slider-mini__slide">
                                                 <picture class="card-slider-mini__picture"><img
-                                                        class="card-slider-mini__img" src="{{ $product->makeThumbnail('70x70') }}" alt="{{ $product->title }}" />
+                                                        class="card-slider-mini__img"
+                                                        src="{{ $product->makeThumbnail('70x70') }}"
+                                                        alt="{{ $product->title }}" />
                                                 </picture>
                                             </div>
 
@@ -52,7 +54,9 @@
                                         <div class="js-card-slider-main-init card-slider-main__el">
                                             <div class="card-slider-main__slide">
                                                 <picture class="card-slider-main__picture"><img
-                                                        class="card-slider-main__img" src="{{ $product->makeThumbnail('700x700') }}" alt="{{ $product->title }}" />
+                                                        class="card-slider-main__img"
+                                                        src="{{ $product->makeThumbnail('700x700') }}"
+                                                        alt="{{ $product->title }}" />
                                                 </picture>
                                             </div>
 
@@ -67,57 +71,41 @@
                                 <table class="card-el__characteristics">
                                     <tbody>
                                         @foreach ($product->properties as $property)
-                                        <tr>
-                                            <td>{{ $property->title }}:</td>
-                                            <td>{{ $property->pivot->value }}</td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{ $property->title }}:</td>
+                                                <td>{{ $property->pivot->value }}</td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
                                 <button class="js-btn-detail btn-detail card-el__detail" type="button"
-                                    data-title-active="Скрыть обратно">Показать описание<span
-                                        class="btn-detail__dropdown">
+                                    data-title-active="Скрыть обратно">Показать описание<span class="btn-detail__dropdown">
                                         <span class="btn-detail__dropdown-inner">
-                                        {{ $product->text }}
+                                            {{ $product->text }}
                                         </span></span></button>
-                                <div class="card-el__item">
-                                    <div class="card-el__subtitle">Choose Size:</div>
-                                    <div class="size-label-list card-el__size-label-list">
-                                        <div class="size-label-list__inner">
-                                            <div class="size-label-list__inner-item">
-                                                <label class="size-label size-label--size-md size-label--theme-dark">
-                                                    <input class="size-label__control" type="radio" name="size[]"
-                                                        value="15.5" /><span class="size-label__inner"><span
-                                                            class="size-label__title">15.5</span></span>
-                                                </label>
-                                            </div>
-                                            <div class="size-label-list__inner-item">
-                                                <label class="size-label size-label--size-md size-label--theme-dark">
-                                                    <input class="size-label__control" type="radio" name="size[]"
-                                                        checked="checked" value="16" /><span
-                                                        class="size-label__inner"><span
-                                                            class="size-label__title">16</span></span>
-                                                </label>
-                                            </div>
-                                            <div class="size-label-list__inner-item">
-                                                <label class="size-label size-label--size-md size-label--theme-dark">
-                                                    <input class="size-label__control" type="radio" name="size[]"
-                                                        value="16.5" /><span class="size-label__inner"><span
-                                                            class="size-label__title">16.5</span></span>
-                                                </label>
-                                            </div>
-                                            <div class="size-label-list__inner-item">
-                                                <label class="size-label size-label--size-md size-label--theme-dark">
-                                                    <input class="size-label__control" type="radio" name="size[]"
-                                                        value="17" /><span class="size-label__inner"><span
-                                                            class="size-label__title">17</span></span>
-                                                </label>
+                                @foreach ($options as $option => $values)
+                                    <div class="card-el__item">
+                                        <div class="card-el__subtitle">{{ $option }}:</div>
+                                        <div class="size-label-list card-el__size-label-list">
+                                            <div class="size-label-list__inner">
+                                                @foreach ($values as $idx => $value)
+                                                    <div class="size-label-list__inner-item">
+                                                        <label
+                                                            class="size-label size-label--size-md size-label--theme-dark">
+                                                            <input class="size-label__control" @checked($idx == 0)
+                                                                type="radio" name="{{ $option }}[]"
+                                                                value="{{ $value->id }}" /><span
+                                                                class="size-label__inner"><span
+                                                                    class="size-label__title">{{ $value->title }}</span></span>
+                                                        </label>
+                                                    </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                                 <div class="card-el__item">
-                                    <div class="card-el__subtitle">Quantity</div>
+                                    <div class="card-el__subtitle">Количество:</div>
                                     <div class="card-el__count">
                                         <button
                                             class="js-order-good-card-btn-count-minus btn-count btn-count--size-lg btn-count--theme-black card-el__count-btn card-el__count-btn--minus"
@@ -137,8 +125,8 @@
                                 </div>
                                 <div class="card-el__price">
                                     <div class="card-el__price-inner">
-                                        <p class="card-el__price-new">456$</p>
-                                        <p class="card-el__price-old">456$</p>
+                                        <p class="card-el__price-new">{{ $product->price }} руб</p>
+                                        {{-- <p class="card-el__price-old">456$</p> --}}
                                     </div>
                                 </div>
                                 <div class="btn-group card-el__btns-action">
@@ -148,7 +136,7 @@
                                                     class="btn__inner">
                                                     <svg class="icon btn__icon btn__icon--rtl">
                                                         <use xlink:href="/images/sprite.svg#basket"></use>
-                                                    </svg><span class="btn__title">Add to Bag</span></span></button>
+                                                    </svg><span class="btn__title">В корзину</span></span></button>
                                         </div>
                                         <div class="btn-group__list-item">
                                             <button
@@ -216,7 +204,7 @@
                                                         <h3 class="cheaper-card__title"><a class="cheaper-card__link"
                                                                 href="#">Silver earrings with cubic zirconia</a></h3>
                                                         <div class="cheaper-card__price">
-                                                            <div class="cheaper-card__price-new">6264 грн</div>
+                                                            <div class="cheaper-card__price-new">6264 руб</div>
                                                         </div>
                                                     </div>
                                                 </article>
@@ -229,8 +217,8 @@
                                                         <h3 class="cheaper-card__title"><a class="cheaper-card__link"
                                                                 href="#">Silver earrings with cubic zirconia</a></h3>
                                                         <div class="cheaper-card__price">
-                                                            <div class="cheaper-card__price-new">6264 грн</div>
-                                                            <div class="cheaper-card__price-old">8764 грн</div>
+                                                            <div class="cheaper-card__price-new">6264 руб</div>
+                                                            <div class="cheaper-card__price-old">8764 руб</div>
                                                         </div>
                                                     </div>
                                                 </article>
@@ -257,207 +245,43 @@
                 </div>
             </div>
         </div>
-        <section class="screen">
-            <div class="container screen__container">
-                <h2 class="title-size-2 screen__title">Похожие товары</h2>
-                <div class="goods-list screen__goods-list">
-                    <div class="js-goods-slider-mobile-init goods-list__row">
-                        <div class="goods-list__col goods-list__col--slider">
-                            <article class="good-card goods-list__card">
-                                <button
-                                    class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
-                                    type="button">
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-outline"></use>
-                                    </svg>
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-fill"></use>
-                                    </svg>
-                                </button>
-                                <picture class="good-card__picture"><img src="/images/good-card-1.jpg"
-                                        alt="Silver earrings with cubic zirconia" /></picture>
-                                <div class="good-card__content">
-                                    <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                            href="#">Silver earrings with cubic zirconia</a></h3>
-                                    <div class="good-card__price">
-                                        <div class="good-card__price-new">6264 грн</div>
-                                        <div class="good-card__price-old">8764 грн</div>
+        @if (!empty($also_products))
+            <section class="screen">
+                <div class="container screen__container">
+                    <h2 class="title-size-2 screen__title">Просмотренные товары</h2>
+                    <div class="goods-list screen__goods-list">
+                        <div class="js-goods-slider-mobile-init goods-list__row">
+                            @foreach ($also_products as $also_product)
+                            <div class="goods-list__col goods-list__col--slider">
+                                <article class="good-card goods-list__card">
+                                    <button
+                                        class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
+                                        type="button">
+                                        <svg class="icon action-btn__icon">
+                                            <use xlink:href="/images/sprite.svg#like-outline"></use>
+                                        </svg>
+                                        <svg class="icon action-btn__icon">
+                                            <use xlink:href="/images/sprite.svg#like-fill"></use>
+                                        </svg>
+                                    </button>
+                                    <picture class="good-card__picture"><img src="{{ $product->makeThumbnail('400x400') }}"
+                                            alt="{{ $also_product->title }}" /></picture>
+                                    <div class="good-card__content">
+                                        <h3 class="title-size-5 good-card__title"><a class="good-card__link"
+                                                href="{{ route('product', $also_product->slug) }}">{{ $also_product->title }}</a></h3>
+                                        <div class="good-card__price">
+                                            <div class="good-card__price-new">{{ $also_product->price }} руб</div>
+                                            {{-- <div class="good-card__price-old">8764 руб</div> --}}
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="goods-list__col goods-list__col--slider">
-                            <article class="good-card goods-list__card">
-                                <button
-                                    class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
-                                    type="button">
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-outline"></use>
-                                    </svg>
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-fill"></use>
-                                    </svg>
-                                </button>
-                                <picture class="good-card__picture"><img src="/images/good-card-2.jpg"
-                                        alt="Silver earrings with cubic zirconia" /></picture>
-                                <div class="good-card__content">
-                                    <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                            href="#">Silver earrings with cubic zirconia</a></h3>
-                                    <div class="good-card__price">
-                                        <div class="good-card__price-new">6264 грн</div>
-                                        <div class="good-card__price-old">8764 грн</div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="goods-list__col goods-list__col--slider">
-                            <article class="good-card goods-list__card">
-                                <button
-                                    class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
-                                    type="button">
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-outline"></use>
-                                    </svg>
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-fill"></use>
-                                    </svg>
-                                </button>
-                                <picture class="good-card__picture"><img src="/images/good-card-3.jpg"
-                                        alt="Silver earrings with cubic zirconia" /></picture>
-                                <div class="good-card__content">
-                                    <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                            href="#">Silver earrings with cubic zirconia</a></h3>
-                                    <div class="good-card__price">
-                                        <div class="good-card__price-new">6264 грн</div>
-                                        <div class="good-card__price-old">8764 грн</div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="goods-list__col goods-list__col--slider">
-                            <article class="good-card goods-list__card">
-                                <button
-                                    class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
-                                    type="button">
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-outline"></use>
-                                    </svg>
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-fill"></use>
-                                    </svg>
-                                </button>
-                                <picture class="good-card__picture"><img src="/images/good-card-1.jpg"
-                                        alt="Silver earrings with cubic zirconia" /></picture>
-                                <div class="good-card__content">
-                                    <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                            href="#">Silver earrings with cubic zirconia</a></h3>
-                                    <div class="good-card__price">
-                                        <div class="good-card__price-new">6264 грн</div>
-                                        <div class="good-card__price-old">8764 грн</div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="goods-list__col goods-list__col--slider">
-                            <article class="good-card goods-list__card">
-                                <button
-                                    class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
-                                    type="button">
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-outline"></use>
-                                    </svg>
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-fill"></use>
-                                    </svg>
-                                </button>
-                                <picture class="good-card__picture"><img src="/images/good-card-2.jpg"
-                                        alt="Silver earrings with cubic zirconia" /></picture>
-                                <div class="good-card__content">
-                                    <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                            href="#">Silver earrings with cubic zirconia</a></h3>
-                                    <div class="good-card__price">
-                                        <div class="good-card__price-new">6264 грн</div>
-                                        <div class="good-card__price-old">8764 грн</div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="goods-list__col goods-list__col--slider">
-                            <article class="good-card goods-list__card">
-                                <button
-                                    class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
-                                    type="button">
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-outline"></use>
-                                    </svg>
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-fill"></use>
-                                    </svg>
-                                </button>
-                                <picture class="good-card__picture"><img src="/images/good-card-3.jpg"
-                                        alt="Silver earrings with cubic zirconia" /></picture>
-                                <div class="good-card__content">
-                                    <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                            href="#">Silver earrings with cubic zirconia</a></h3>
-                                    <div class="good-card__price">
-                                        <div class="good-card__price-new">6264 грн</div>
-                                        <div class="good-card__price-old">8764 грн</div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="goods-list__col goods-list__col--slider">
-                            <article class="good-card goods-list__card">
-                                <button
-                                    class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
-                                    type="button">
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-outline"></use>
-                                    </svg>
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-fill"></use>
-                                    </svg>
-                                </button>
-                                <picture class="good-card__picture"><img src="/images/good-card-1.jpg"
-                                        alt="Silver earrings with cubic zirconia" /></picture>
-                                <div class="good-card__content">
-                                    <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                            href="#">Silver earrings with cubic zirconia</a></h3>
-                                    <div class="good-card__price">
-                                        <div class="good-card__price-new">6264 грн</div>
-                                        <div class="good-card__price-old">8764 грн</div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="goods-list__col goods-list__col--slider">
-                            <article class="good-card goods-list__card">
-                                <button
-                                    class="js-good-card-favorites action-btn action-btn--size-md good-card__btn-favorites"
-                                    type="button">
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-outline"></use>
-                                    </svg>
-                                    <svg class="icon action-btn__icon">
-                                        <use xlink:href="/images/sprite.svg#like-fill"></use>
-                                    </svg>
-                                </button>
-                                <picture class="good-card__picture"><img src="/images/good-card-2.jpg"
-                                        alt="Silver earrings with cubic zirconia" /></picture>
-                                <div class="good-card__content">
-                                    <h3 class="title-size-5 good-card__title"><a class="good-card__link"
-                                            href="#">Silver earrings with cubic zirconia</a></h3>
-                                    <div class="good-card__price">
-                                        <div class="good-card__price-new">6264 грн</div>
-                                        <div class="good-card__price-old">8764 грн</div>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <section class="promotions-section">
             <div class="container promotions-section__container">
                 <h2 class="visually-hidden promotions-section__title">Promotions and discounts</h2>

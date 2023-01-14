@@ -8,7 +8,7 @@
         <section class="main-slider">
             <div class="js-main-slider-init main-slider__init">
                 <div class="main-slider__slide">
-                    <picture class="main-slider__picture"><img src="images/main-slider-1.jpg"
+                    <picture class="main-slider__picture"><img src="/images/hero-poster.png"
                             alt="Gold earrings with diamant" /></picture>
                     <div class="container main-slider__container">
                         <div class="main-slider__content">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="main-slider__slide">
-                    <picture class="main-slider__picture"><img src="images/main-slider-1.jpg"
+                    <picture class="main-slider__picture"><img src="/images/hero-poster.png"
                             alt="Gold earrings with diamant" /></picture>
                     <div class="container main-slider__container">
                         <div class="main-slider__content">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="main-slider__slide">
-                    <picture class="main-slider__picture"><img src="images/main-slider-1.jpg"
+                    <picture class="main-slider__picture"><img src="/images/hero-poster.png"
                             alt="Gold earrings with diamant" /></picture>
                     <div class="container main-slider__container">
                         <div class="main-slider__content">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="main-slider__slide">
-                    <picture class="main-slider__picture"><img src="images/main-slider-1.jpg"
+                    <picture class="main-slider__picture"><img src="/images/hero-poster.png"
                             alt="Gold earrings with diamant" /></picture>
                     <div class="container main-slider__container">
                         <div class="main-slider__content">
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="main-slider__slide">
-                    <picture class="main-slider__picture"><img src="images/main-slider-1.jpg"
+                    <picture class="main-slider__picture"><img src="/images/hero-poster.png"
                             alt="Gold earrings with diamant" /></picture>
                     <div class="container main-slider__container">
                         <div class="main-slider__content">
@@ -532,7 +532,7 @@
                                 <picture class="info-card__picture"><img src="images/info-card-1.svg"
                                         alt="Доставка в течении 3-х дней" /></picture>
                                 <div class="info-card__content">
-                                    <h3 class="title-size-5 info-card__title">Доставка в течении 3-х дней</h3>
+                                    <h3 class="title-size-5 info-card__title font-normal">Доставка в течении 3-х дней</h3>
                                 </div>
                             </article>
                         </div>
